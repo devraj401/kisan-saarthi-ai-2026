@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan Saarthi AI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic CSS included for simplicity */
+        body { margin:0; font-family: 'Arial', sans-serif; background:#f5f9f5; }
+        a { text-decoration:none; color:inherit; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:#2e7d32; color:white; position:sticky; top:0; z-index:1000; }
+        .navbar .logo { font-size:1.5rem; font-weight:bold; }
+        .navbar .menu a { margin-left:1rem; }
+        .hamburger { display:none; cursor:pointer; font-size:1.5rem; }
+        @media(max-width:768px){
+            .navbar .menu { display:none; flex-direction:column; position:absolute; top:60px; right:0; background:#2e7d32; width:200px; padding:1rem; }
+            .navbar .menu.show { display:flex; }
+            .hamburger { display:flex; }
+        }
+        .hero { background: url('images/hero.jpg') center/cover no-repeat; height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center; position:relative; }
+        .hero::before { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); }
+        .hero-content { position:relative; z-index:1; }
+        .hero h1 { font-size:3rem; margin:0; }
+        .hero p { font-size:1.5rem; margin:1rem 0; }
+        .hero .buttons { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+        .hero button { padding:0.8rem 1.5rem; border:none; border-radius:8px; background:#66bb6a; color:white; cursor:pointer; transition:0.3s; }
+        .hero button:hover { background:#43a047; }
+        .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; padding:3rem 2rem; }
+        .card { background:white; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); overflow:hidden; transition:0.3s; }
+        .card:hover { transform:translateY(-5px); }
+        .card img { width:100%; height:150px; object-fit:cover; }
+        .card-content { padding:1rem; }
+        .card-content h3 { margin:0 0 0.5rem 0; }
+        .card-content p { font-size:0.9rem; color:#555; }
+        .card-content button { margin-top:0.5rem; padding:0.5rem 1rem; border:none; border-radius:6px; background:#66bb6a; color:white; cursor:pointer; }
+        .footer { background:#2e7d32; color:white; text-align:center; padding:1rem; margin-top:2rem; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Kisan Saarthi AI</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#hero">Home</a>
+            <a href="#features">Features</a>
+            <a href="#form">Ask AI</a>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Kisan Saarthi AI</h1>
+            <p>Har Kisan ka Digital Margdarshak</p>
+            <div class="buttons">
+                <button>Crop Suggestion</button>
+                <button>Disease Check</button>
+                <button>Ask AI</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="card">
+            <img src="images/crop.jpg" alt="Crop Suggestion">
+            <div class="card-content">
+                <h3>Crop Suggestion</h3>
+                <p>Get best crop suggestions based on your soil and season.</p>
+                <button>Try Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/disease.jpg" alt="Disease Check">
+            <div class="card-content">
+                <h3>Disease Check</h3>
+                <p>Identify crop diseases with AI-powered image analysis.</p>
+                <button>Check Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/ai.jpg" alt="Ask AI">
+            <div class="card-content">
+                <h3>Ask AI</h3>
+                <p>Get answers to all farming-related queries instantly.</p>
+                <button>Ask Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2026 Kisan Saarthi AI. All Rights Reserved.
+    </footer>
+
+    <script>
+        function toggleMenu(){
+            document.querySelector('.menu').classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
